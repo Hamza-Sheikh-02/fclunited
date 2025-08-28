@@ -313,7 +313,7 @@ function AboutSection() {
 
           <div className="flex-1 max-w-lg">
             <h2 className="text-4xl font-bold mb-6 text-gray-900">
-              SEE WHAT WE'RE
+              SEE WHAT WE&apos;RE
               <br />
               <span className="text-red-600">ALL ABOUT</span>
             </h2>
@@ -333,7 +333,7 @@ function AboutSection() {
                 where they are in their fitness journey, offering entry points
                 that allow them to grow at their own pace and with the
                 encouragement of their fellow competitors. We are honored to
-                have SERVPRO® serving as our league's inaugural title sponsor in
+                have SERVPRO® serving as our league&apos;s inaugural title sponsor in
                 the United States.
               </p>
             </div>

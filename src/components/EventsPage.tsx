@@ -93,7 +93,7 @@ export default function EventsPage() {
               ></div>
               <div className="p-4 sm:p-6">
                 <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">
-                  THE ORIGINAL "TOUGHEST TWO MINUTES IN SPORTS"
+                  THE ORIGINAL &quot;TOUGHEST TWO MINUTES IN SPORTS&quot;
                 </h3>
                 <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-4 sm:mb-6">
                   We created the Firefighter Challenge concept, formally known

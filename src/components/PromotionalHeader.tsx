@@ -11,48 +11,46 @@ const PromotionalHeader = () => {
   return (
     isVisible && (
       <section
-        className="relative flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 px-4 sm:px-8 py-4 sm:py-6 text-xs sm:text-sm"
+        className="relative flex items-center justify-center gap-4 px-4 py-2"
         style={{
           backgroundImage: "url('/images/PromotionalHeader/background.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
         }}
       >
-        <button className="text-white/80 hover:text-white transition-colors duration-200 p-2 hover:bg-white/10 rounded-full">
-          <BiChevronLeft className="text-xl sm:text-2xl" />
+        <button className="text-white/60 hover:text-white transition-colors duration-200 p-1">
+          <BiChevronLeft className="text-xl" />
         </button>
 
-        <div className="flex items-center justify-center">
+        <div className="flex items-center gap-2">
           <Image
             src="/images/PromotionalHeader/img-1.png"
             alt="Perform at your best - Task Force FPS"
-            height={40}
-            width={200}
-            className="h-8 sm:h-10 w-auto max-w-[150px] sm:max-w-[200px] object-contain rounded-lg"
+            height={50}
+            width={180}
+            className="h-12 w-auto object-contain rounded-2xl"
           />
-        </div>
 
-        <div className="flex items-center justify-center">
           <Image
             src="/images/PromotionalHeader/img-2.png"
             alt="Supporting First Responders - Learn More"
-            height={40}
-            width={200}
-            className="h-8 sm:h-10 w-auto max-w-[150px] sm:max-w-[200px] object-contain rounded-lg"
+            height={50}
+            width={180}
+            className="h-12 w-auto object-contain rounded-2xl"
           />
         </div>
 
-        <button className="text-white/80 hover:text-white transition-colors duration-200 p-2 hover:bg-white/10 rounded-full">
-          <BiChevronRight className="text-xl sm:text-2xl" />
+        <button className="text-white/60 hover:text-white transition-colors duration-200 p-1">
+          <BiChevronRight className="text-xl" />
         </button>
 
         <button
           aria-label="Close announcement"
           onClick={() => setIsVisible(false)}
-          className="absolute top-2 right-2 sm:top-4 sm:right-4 text-white hover:text-gray-300 transition-colors duration-200 p-1"
+          className="absolute top-2 right-2 text-white/60 hover:text-white transition-colors duration-200"
         >
-          <IoMdClose className="text-lg sm:text-xl" />
+          <IoMdClose className="text-lg" />
         </button>
       </section>
     )
