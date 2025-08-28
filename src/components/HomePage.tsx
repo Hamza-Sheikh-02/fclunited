@@ -617,7 +617,7 @@ function ShopSection() {
   );
 }
 
-function NewsletterSection() {
+export function NewsletterSection() {
   return (
     <section className="bg-black text-white py-16">
       <div className="container mx-auto px-4">
