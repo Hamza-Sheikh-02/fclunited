@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -21,47 +22,56 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
-            <a href="#" className="text-red-600 hover:text-red-700 font-medium">
+            <Link
+              href="/"
+              className="text-red-600 hover:text-red-700 font-medium"
+            >
               Home
-            </a>
-            <a href="#" className="text-gray-600 hover:text-gray-800">
+            </Link>
+            <Link href="/about" className="text-gray-600 hover:text-gray-800">
               About Us
-            </a>
-            <a href="#" className="text-gray-600 hover:text-gray-800">
+            </Link>
+            <Link
+              href="/league-info"
+              className="text-gray-600 hover:text-gray-800"
+            >
               League Info
-            </a>
-            <a href="#" className="text-gray-600 hover:text-gray-800">
+            </Link>
+            <Link
+              href="/licensee-info"
+              className="text-gray-600 hover:text-gray-800"
+            >
               Licensee Info
-            </a>
-            <a href="#" className="text-gray-600 hover:text-gray-800">
+            </Link>
+            <Link href="/events" className="text-gray-600 hover:text-gray-800">
               FCL Events
-            </a>
-            <a href="#" className="text-gray-600 hover:text-gray-800">
+            </Link>
+            <Link href="#" className="text-gray-600 hover:text-gray-800">
               Shop
-            </a>
+            </Link>
           </div>
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-4 mt-6 pt-6 border-t border-gray-100 text-xs text-gray-500">
-          <a href="#" className="hover:text-gray-700">
+          <Link href="#" className="hover:text-gray-700">
             Privacy Policy
-          </a>
+          </Link>
           <span className="text-gray-300">|</span>
-          <a href="#" className="hover:text-gray-700">
+          <Link href="#" className="hover:text-gray-700">
             FCL Privacy
-          </a>
+          </Link>
           <span className="text-gray-300">|</span>
-          <a href="#" className="hover:text-gray-700">
+          <Link href="#" className="hover:text-gray-700">
             EU/UK Privacy
-          </a>
+          </Link>
           <span className="text-gray-300">|</span>
-          <a href="#" className="hover:text-gray-700">
+          <Link href="#" className="hover:text-gray-700">
             Terms of Service
-          </a>
+          </Link>
           <span className="text-gray-300">|</span>
-          <a href="#" className="hover:text-gray-700">
+          <Link href="#" className="hover:text-gray-700">
             Cookie Settings
-          </a>
+          </Link>
         </div>
       </div>
     </footer>
