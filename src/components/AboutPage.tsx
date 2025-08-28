@@ -7,7 +7,7 @@ export default function AboutPage() {
     <>
       <section className="w-full">
         <div
-          className="relative h-64 sm:h-80 md:h-96 lg:h-[28rem] xl:h-[32rem] w-full bg-cover bg-center flex items-center justify-center"
+          className="relative h-72 sm:h-80 md:h-96 lg:h-[28rem] xl:h-[32rem] w-full bg-cover bg-center flex items-center justify-center"
           style={{
             backgroundImage: "url('/images/About/about.png')",
           }}
