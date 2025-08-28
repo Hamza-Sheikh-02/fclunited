@@ -720,18 +720,20 @@ function SponsorsSection() {
           SPONSORS
         </h2>
 
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16">
-          {sponsors.map((sponsor, index) => (
-            <div key={index} className="flex items-center justify-center">
-              <Image
-                src={sponsor.logo || "/placeholder.svg"}
-                alt={sponsor.alt}
-                width={150}
-                height={80}
-                className="max-h-20 bg-white w-auto object-contain hover:grayscale-0 transition-all duration-300"
-              />
-            </div>
-          ))}
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap justify-center items-center gap-16 md:gap-20 lg:gap-24">
+            {sponsors.map((sponsor, index) => (
+              <div key={index} className="flex items-center justify-center">
+                <Image
+                  src={sponsor.logo || "/placeholder.svg"}
+                  alt={sponsor.alt}
+                  width={400}
+                  height={400}
+                  className="max-h-40 w-auto object-contain hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
