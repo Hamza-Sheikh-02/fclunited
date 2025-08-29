@@ -21,24 +21,25 @@ const Navigation = () => {
     <>
       <PromotionalHeader />
       <nav className="w-full bg-white border-b border-gray-200">
-        <div className="flex items-center justify-between px-6 md:px-10 py-4 max-w-7xl mx-auto">
+        <div className="flex items-center justify-between px-4 sm:px-6 lg:px-10 py-3 sm:py-4 max-w-7xl mx-auto">
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2">
               <Image
                 src={"/images/Navigation/logo.png"}
-                width={75}
-                height={75}
+                width={60}
+                height={60}
                 alt="logo"
+                className="w-12 h-12 sm:w-16 sm:h-16 lg:w-[75px] lg:h-[75px]"
               />
             </Link>
           </div>
 
-          <div className="hidden md:flex">
-            <ul className="flex items-center gap-8">
+          <div className="hidden lg:flex">
+            <ul className="flex items-center gap-6 xl:gap-8">
               <li>
                 <Link
                   href="/"
-                  className={`text-gray-700 hover:text-red-600 font-medium pb-1 border-b-2 transition-colors ${
+                  className={`text-sm xl:text-base text-gray-700 hover:text-red-600 font-medium pb-1 border-b-2 transition-colors ${
                     pathname === "/"
                       ? "border-red-600 text-red-600"
                       : "border-transparent"
@@ -50,7 +51,7 @@ const Navigation = () => {
               <li>
                 <Link
                   href="/about"
-                  className={`text-gray-700 hover:text-red-600 font-medium pb-1 border-b-2 transition-colors ${
+                  className={`text-sm xl:text-base text-gray-700 hover:text-red-600 font-medium pb-1 border-b-2 transition-colors ${
                     pathname === "/about"
                       ? "border-red-600 text-red-600"
                       : "border-transparent"
@@ -62,7 +63,7 @@ const Navigation = () => {
               <li>
                 <Link
                   href="/league-info"
-                  className={`text-gray-700 hover:text-red-600 font-medium pb-1 border-b-2 transition-colors ${
+                  className={`text-sm xl:text-base text-gray-700 hover:text-red-600 font-medium pb-1 border-b-2 transition-colors ${
                     pathname === "/league-info"
                       ? "border-red-600 text-red-600"
                       : "border-transparent"
@@ -74,7 +75,7 @@ const Navigation = () => {
               <li>
                 <Link
                   href="/licensee-info"
-                  className={`text-gray-700 hover:text-red-600 font-medium pb-1 border-b-2 transition-colors ${
+                  className={`text-sm xl:text-base text-gray-700 hover:text-red-600 font-medium pb-1 border-b-2 transition-colors ${
                     pathname === "/licensee-info"
                       ? "border-red-600 text-red-600"
                       : "border-transparent"
@@ -86,7 +87,7 @@ const Navigation = () => {
               <li>
                 <Link
                   href="/events"
-                  className={`text-gray-700 hover:text-red-600 font-medium pb-1 border-b-2 transition-colors ${
+                  className={`text-sm xl:text-base text-gray-700 hover:text-red-600 font-medium pb-1 border-b-2 transition-colors ${
                     pathname === "/events"
                       ? "border-red-600 text-red-600"
                       : "border-transparent"
@@ -98,7 +99,7 @@ const Navigation = () => {
               <li>
                 <Link
                   href="/shop"
-                  className={`text-gray-700 hover:text-red-600 font-medium pb-1 border-b-2 transition-colors ${
+                  className={`text-sm xl:text-base text-gray-700 hover:text-red-600 font-medium pb-1 border-b-2 transition-colors ${
                     pathname === "/shop"
                       ? "border-red-600 text-red-600"
                       : "border-transparent"
@@ -110,15 +111,17 @@ const Navigation = () => {
             </ul>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <Button
               variant="outline"
-              className="hidden md:inline-flex border-red-600 text-red-600 hover:bg-red-50 bg-transparent"
+              className="hidden md:inline-flex border-red-600 text-red-600 hover:bg-red-50 bg-transparent text-sm lg:text-base px-3 lg:px-4"
             >
-              FCL Login
+              <span className="hidden lg:inline">FCL Login</span>
+              <span className="lg:hidden">Login</span>
             </Button>
-            <Button className="hidden md:inline-flex bg-red-600 hover:bg-red-700 text-white">
-              JOIN FCL
+            <Button className="hidden md:inline-flex bg-red-600 hover:bg-red-700 text-white text-sm lg:text-base px-3 lg:px-4">
+              <span className="hidden lg:inline">JOIN FCL</span>
+              <span className="lg:hidden">JOIN</span>
             </Button>
 
             <Sheet>
@@ -126,26 +129,26 @@ const Navigation = () => {
                 <Button
                   variant="outline"
                   size="icon"
-                  className="md:hidden bg-transparent"
+                  className="lg:hidden bg-transparent border-gray-300 hover:border-red-600 hover:text-red-600"
                   aria-label="Open Mobile Menu"
                 >
                   <FiMenu className="w-5 h-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right">
-                <SheetHeader>
-                  <SheetTitle className="text-xl font-bold">
+              <SheetContent side="right" className="w-80 sm:w-96">
+                <SheetHeader className="pb-6">
+                  <SheetTitle className="text-xl font-bold text-left">
                     FCL Menu
                   </SheetTitle>
                 </SheetHeader>
-                <ul className="flex flex-col gap-4 mt-6">
+                <ul className="flex flex-col gap-2">
                   <li>
                     <Link
                       href="/"
-                      className={`font-medium block py-2 border-l-4 pl-4 transition-colors ${
+                      className={`font-medium block py-3 px-4 border-l-4 transition-colors rounded-r-md ${
                         pathname === "/"
                           ? "border-red-600 text-red-600 bg-red-50"
-                          : "border-transparent text-gray-700 hover:text-red-600"
+                          : "border-transparent text-gray-700 hover:text-red-600 hover:bg-gray-50"
                       }`}
                     >
                       Home
@@ -154,10 +157,10 @@ const Navigation = () => {
                   <li>
                     <Link
                       href="/about"
-                      className={`font-medium block py-2 border-l-4 pl-4 transition-colors ${
+                      className={`font-medium block py-3 px-4 border-l-4 transition-colors rounded-r-md ${
                         pathname === "/about"
                           ? "border-red-600 text-red-600 bg-red-50"
-                          : "border-transparent text-gray-700 hover:text-red-600"
+                          : "border-transparent text-gray-700 hover:text-red-600 hover:bg-gray-50"
                       }`}
                     >
                       About Us
@@ -166,10 +169,10 @@ const Navigation = () => {
                   <li>
                     <Link
                       href="/league-info"
-                      className={`font-medium block py-2 border-l-4 pl-4 transition-colors ${
+                      className={`font-medium block py-3 px-4 border-l-4 transition-colors rounded-r-md ${
                         pathname === "/league-info"
                           ? "border-red-600 text-red-600 bg-red-50"
-                          : "border-transparent text-gray-700 hover:text-red-600"
+                          : "border-transparent text-gray-700 hover:text-red-600 hover:bg-gray-50"
                       }`}
                     >
                       League Info
@@ -178,10 +181,10 @@ const Navigation = () => {
                   <li>
                     <Link
                       href="/licensee-info"
-                      className={`font-medium block py-2 border-l-4 pl-4 transition-colors ${
+                      className={`font-medium block py-3 px-4 border-l-4 transition-colors rounded-r-md ${
                         pathname === "/licensee-info"
                           ? "border-red-600 text-red-600 bg-red-50"
-                          : "border-transparent text-gray-700 hover:text-red-600"
+                          : "border-transparent text-gray-700 hover:text-red-600 hover:bg-gray-50"
                       }`}
                     >
                       Licensee Info
@@ -190,10 +193,10 @@ const Navigation = () => {
                   <li>
                     <Link
                       href="/events"
-                      className={`font-medium block py-2 border-l-4 pl-4 transition-colors ${
+                      className={`font-medium block py-3 px-4 border-l-4 transition-colors rounded-r-md ${
                         pathname === "/events"
                           ? "border-red-600 text-red-600 bg-red-50"
-                          : "border-transparent text-gray-700 hover:text-red-600"
+                          : "border-transparent text-gray-700 hover:text-red-600 hover:bg-gray-50"
                       }`}
                     >
                       FCL Events
@@ -202,25 +205,27 @@ const Navigation = () => {
                   <li>
                     <Link
                       href="/shop"
-                      className={`font-medium block py-2 border-l-4 pl-4 transition-colors ${
+                      className={`font-medium block py-3 px-4 border-l-4 transition-colors rounded-r-md ${
                         pathname === "/shop"
                           ? "border-red-600 text-red-600 bg-red-50"
-                          : "border-transparent text-gray-700 hover:text-red-600"
+                          : "border-transparent text-gray-700 hover:text-red-600 hover:bg-gray-50"
                       }`}
                     >
                       Shop
                     </Link>
                   </li>
-                  <li className="pt-4 border-t">
-                    <Button
-                      variant="outline"
-                      className="w-full mb-2 border-red-600 text-red-600 hover:bg-red-50 bg-transparent"
-                    >
-                      FCL Login
-                    </Button>
-                    <Button className="w-full bg-red-600 hover:bg-red-700 text-white">
-                      JOIN FCL
-                    </Button>
+                  <li className="pt-6 mt-4 border-t border-gray-200">
+                    <div className="space-y-3">
+                      <Button
+                        variant="outline"
+                        className="w-full border-red-600 text-red-600 hover:bg-red-50 bg-transparent"
+                      >
+                        FCL Login
+                      </Button>
+                      <Button className="w-full bg-red-600 hover:bg-red-700 text-white">
+                        JOIN FCL
+                      </Button>
+                    </div>
                   </li>
                 </ul>
               </SheetContent>
