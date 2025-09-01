@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-euclid-circular">
+      <body className="font-euclid-circular-medium">
         <Navigation />
         {children}
         <Footer />

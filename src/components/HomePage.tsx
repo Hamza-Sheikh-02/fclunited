@@ -4,11 +4,17 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
-import { Facebook, Youtube, Instagram } from "lucide-react";
-
+import {
+  Facebook,
+  Youtube,
+  Instagram,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 type CardData = {
   id: number;
   title: string;
+  titleClass: string;
   subtitle: string;
   buttonText: string;
   imageLink: string;
@@ -18,14 +24,16 @@ export default function HomePage() {
   const cardsData: CardData[] = [
     {
       id: 1,
-      title: "FIND YOUR FCL SPORT",
+      title: "FIND YOUR",
+      titleClass: "FCL SPORT",
       subtitle: "Check out our many types of FCL competitions!",
       buttonText: "Learn More",
       imageLink: "/images/Hero/card-1.png",
     },
     {
       id: 2,
-      title: "JOIN THE FCL",
+      title: "JOIN THE",
+      titleClass: "FCL",
       subtitle:
         "Get started by joining the FCL, forming a local league, or becoming the exclusive licensee for a state or country.",
       buttonText: "Learn More",
@@ -33,14 +41,16 @@ export default function HomePage() {
     },
     {
       id: 3,
-      title: "CHECK OUT THE ACTION",
+      title: "CHECK OUT",
+      titleClass: "THE ACTION",
       subtitle: "See the many FCL Sports in action on our YouTube Channel.",
       buttonText: "Visit FCL Network",
       imageLink: "/images/Hero/card-3.png",
     },
     {
       id: 4,
-      title: "GET YOUR FCL GEAR",
+      title: "GET YOUR",
+      titleClass: "FCL GEAR",
       subtitle:
         "Shop Fan Gear, Athlete Gear, Athlete Training Equipment, and more!",
       buttonText: "Shop FCL",
@@ -65,7 +75,7 @@ export default function HomePage() {
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-light text-white leading-[0.95] tracking-tight uppercase">
                 Unite, Compete Conquer: Your Challenge Awaits
               </h2>
-              <p className="text-gray-300 text-sm sm:text-base md:text-md max-w-md leading-relaxed font-light">
+              <p className="text-gray-300 text-sm sm:text-base md:text-md max-w-md leading-relaxed font-light font-euclid-circular-regular">
                 The Firefighter Challenge League (FCL) is the first official
                 sporting league of its kind designed exclusively for junior,
                 explorer, cadet, rookie, veteran...
@@ -83,7 +93,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <div className="px-6 py-10 -mt-50">
+      <div className="px-6 py-10 -mt-38">
         <div className="mx-auto max-w-[1200px]">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-end">
             {cardsData.map((card, idx) => (
@@ -131,99 +141,97 @@ function Caard({ card, index }: { card: CardData; index: number }) {
   const stagger = index % 2 === 0 ? "mt-0" : "mt-4";
 
   return (
-    <>
-      <Card
-        className={`${stagger} relative h-[460px] sm:h-80 md:h-[460px] rounded-2xl overflow-hidden shadow-lg`}
-      >
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${card.imageLink})`,
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center center",
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/20" />
-        <CardContent className="relative z-10 h-full p-4 flex flex-col justify-between bg-transparent">
-          <div>
-            <h3 className="text-white text-2xl sm:text-3xl md:text-3xl font-extrabold leading-tight uppercase">
-              {card.title}
-            </h3>
-            <p className="text-white/90 text-sm sm:text-base mt-2 max-w-[260px] font-light">
-              {card.subtitle}
-            </p>
-          </div>
-          <div className="w-full">
-            <Button className="w-full rounded-full py-2.5 text-sm font-semibold bg-red-600 hover:bg-red-700 text-white shadow-md">
-              {card.buttonText}
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
-    </>
+    <Card
+      className={`${stagger} h-[460px] sm:h-80 md:h-[460px] rounded-2xl overflow-hidden shadow-lg bg-center relative bg-cover`}
+      style={{
+        backgroundImage: `url(${card.imageLink})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center center",
+      }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/20" />
+      <CardContent className="relative z-10 h-full p-4 flex flex-col justify-between bg-transparent">
+        <div>
+          <h3 className="text-white text-xl sm:text-2xl md:text-2xl font-extrabold leading-tight uppercase">
+            {card.title}
+          </h3>
+          <h3 className="text-white text-2xl sm:text-3xl md:text-3xl font-extrabold leading-tight uppercase">
+            {card.titleClass}
+          </h3>
+          <p className="text-white/90 text-xs sm:text-sm mt-2 max-w-[260px] font-light font-euclid-circular-regular">
+            {card.subtitle}
+          </p>
+        </div>
+        <div className="w-full">
+          <Button className="w-full rounded-full py-2.5 text-xs font-semibold bg-red-600 hover:bg-red-700 text-white shadow-md">
+            {card.buttonText}
+          </Button>
+        </div>
+      </CardContent>
+    </Card>
   );
 }
 
-import { ChevronLeft, ChevronRight } from "lucide-react";
-
-const events = [
-  {
-    id: 1,
-    location: "FDIC: Indianapolis,",
-    date: "April 8-11, 2025",
-    bgColor: "bg-gradient-to-br from-blue-700 to-blue-500",
-    logo: "/images/Hero/c-1.png",
-    logoAlt: "Season Opener Premiere Challenge",
-  },
-  {
-    id: 2,
-    location: "Salt Lake City, Utah",
-    date: "April 24-26, 2025",
-    bgColor: "bg-gray-200",
-    logo: "/images/Hero/c-2.png",
-    logoAlt: "West Regional Premiere Challenge",
-  },
-  {
-    id: 3,
-    location: "Baton Rouge, Louisiana",
-    date: "May 15-17, 2025",
-    bgColor: "bg-gradient-to-br from-gray-800 to-gray-700",
-    logo: "/images/Hero/c-3.png",
-    logoAlt: "Southwest Regional Premiere Challenge",
-  },
-];
-
 function ScheduleSection() {
+  const events = [
+    {
+      id: 1,
+      location: "FDIC: Indianapolis,",
+      date: "April 8-11, 2025",
+      bgColor: "bg-gradient-to-br from-blue-700 to-blue-500",
+      logo: "/images/Hero/c-1.png",
+      logoAlt: "Season Opener Premiere Challenge",
+    },
+    {
+      id: 2,
+      location: "Salt Lake City, Utah",
+      date: "April 24-26, 2025",
+      bgColor: "bg-gray-200",
+      logo: "/images/Hero/c-2.png",
+      logoAlt: "West Regional Premiere Challenge",
+    },
+    {
+      id: 3,
+      location: "Baton Rouge, Louisiana",
+      date: "May 15-17, 2025",
+      bgColor: "bg-gradient-to-br from-gray-800 to-gray-700",
+      logo: "/images/Hero/c-3.png",
+      logoAlt: "Southwest Regional Premiere Challenge",
+    },
+  ];
+
+  const progressPercent = 33;
+
   return (
     <div className="font-euclid-circular w-full max-w-7xl mx-auto bg-white px-4 py-12 mt-8">
-      <div className="flex items-center gap-24">
-        <div className="flex-shrink-0 flex flex-col justify-center">
+      <div className="flex flex-col lg:flex-row items-center lg:items-center gap-8 lg:gap-24">
+        <div className="flex-shrink-0 flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
           <div className="mb-4">
-            <h2 className="text-4xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
               NEXT UP ON THE
             </h2>
-            <h2 className="text-4xl font-bold text-blue-600 leading-tight">
+            <h2 className="text-3xl sm:text-4xl font-bold text-blue-600 leading-tight">
               SCHEDULE
             </h2>
           </div>
+
           <Button
             variant="destructive"
-            className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded text-base font-medium"
+            className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded text-base font-medium mt-2"
           >
             Full Schedule
           </Button>
         </div>
 
-        <div className="flex-1"></div>
+        <div className="hidden lg:block flex-1" />
 
-        <div className="flex-shrink-0">
-          <div className="flex gap-4 mb-4">
+        <div className="flex-shrink-0 w-full lg:w-auto">
+          <div className="flex gap-4 mb-4 overflow-x-auto lg:overflow-visible px-2 lg:px-0 -mx-2 lg:mx-0">
             {events.map((event) => (
               <Card
                 key={event.id}
-                className={`${event.bgColor} text-white rounded-lg overflow-hidden shadow-lg w-56 h-64`}
+                className={`${event.bgColor} text-white rounded-lg overflow-hidden shadow-lg flex-shrink-0 w-44 sm:w-56 lg:w-56 h-48 sm:h-64 lg:h-64`}
               >
                 <div className="p-4 h-full flex flex-col">
                   <div className="mb-3">
@@ -241,7 +249,7 @@ function ScheduleSection() {
                   </Button>
 
                   <div className="flex justify-center flex-1 items-center">
-                    <div className="w-20 h-20 relative">
+                    <div className="w-14 h-14 sm:w-20 sm:h-20 relative">
                       <Image
                         src={event.logo || "/placeholder.svg"}
                         alt={event.logoAlt}
@@ -254,30 +262,32 @@ function ScheduleSection() {
               </Card>
             ))}
           </div>
-
-          <div className="relative">
-            <div className="h-1 bg-gray-200 rounded-full mb-3">
-              <div className="h-1 bg-red-600 rounded-full w-1/3"></div>
-            </div>
-            <div className="flex justify-end">
-              <div className="flex gap-1">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="w-8 h-8 rounded border-red-600 text-red-600 hover:bg-red-50 bg-transparent"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                </Button>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="w-8 h-8 rounded border-red-600 text-red-600 hover:bg-red-50 bg-transparent"
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </Button>
-              </div>
-            </div>
+        </div>
+      </div>
+      <div className="relative mt-4 px-2 lg:pr-25">
+        <div className="h-1 bg-gray-200 rounded-full mb-3 relative">
+          <div className="relative h-full">
+            <div
+              className="h-1 bg-red-600 rounded-full absolute left-0 top-0"
+              style={{ width: `calc(${progressPercent}% - 1rem)` }}
+            />
           </div>
+        </div>
+        <div className="hidden lg:flex items-center justify-end gap-2 absolute right-2 -top-2">
+          <Button
+            variant="outline"
+            size="icon"
+            className="w-8 h-8 rounded border-red-600 text-red-600 hover:bg-red-50 bg-white shadow-sm"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </Button>
+          <Button
+            variant="outline"
+            size="icon"
+            className="w-8 h-8 rounded border-red-600 text-red-600 hover:bg-red-50 bg-white shadow-sm"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </Button>
         </div>
       </div>
     </div>
@@ -285,9 +295,12 @@ function ScheduleSection() {
 }
 
 function AboutSection() {
+  const videoSrc =
+    "https://www.youtube.com/embed/KXbvSg-BE9A?si=lzq1amzCxewPboK3";
+
   return (
     <section
-      className="py-16 mt-12 bg-gray-100"
+      className="py-16 mt-12 bg-gray-100 relative"
       style={{
         backgroundImage: "url('/images/Hero/bg-grey.png')",
         backgroundSize: "cover",
@@ -295,28 +308,43 @@ function AboutSection() {
         backgroundPosition: "center center",
       }}
     >
-      <div className="font-euclid-circular container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
-          <div className="flex-1 max-w-lg">
-            <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
+      <div className="font-euclid-circular max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+          <div className="w-full flex justify-center">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl w-full max-w-[750px] aspect-[370/255]">
               <iframe
-                src="https://www.youtube.com/embed/QS4WdFq2j3k"
+                src={videoSrc}
                 title="Firefighter Challenge Championship Series"
-                className="w-full h-full"
+                className="w-full h-full block"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
+
+              <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                <div className="rounded-full bg-white/90 p-2 shadow-md">
+                  <div className="bg-red-600 rounded-full w-12 h-12 flex items-center justify-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="white"
+                      className="w-5 h-5"
+                    >
+                      <path d="M4.5 3.5v17l15-8.5-15-8.5z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="flex-1 max-w-lg">
-            <h2 className="text-4xl font-bold mb-6 text-gray-900">
+          <div className="w-full px-2 lg:px-8">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-gray-900">
               SEE WHAT WE&apos;RE
               <br />
-              <span className="text-red-600">ALL ABOUT</span>
+              <span className="block text-red-600">ALL ABOUT</span>
             </h2>
 
-            <div className="space-y-4 text-gray-700 leading-relaxed">
+            <div className="mt-6 font-euclid-circular-regular leading-relaxed space-y-4 text-sm md:text-base max-w-xl ml-auto">
               <p>
                 The Firefighter Challenge League (FCL) is the first official
                 sporting league of its kind designed exclusively for junior,
@@ -331,14 +359,16 @@ function AboutSection() {
                 where they are in their fitness journey, offering entry points
                 that allow them to grow at their own pace and with the
                 encouragement of their fellow competitors. We are honored to
-                have SERVPRO® serving as our league&apos;s inaugural title sponsor in
-                the United States.
+                have SERVPRO® serving as our league&apos;s inaugural title
+                sponsor in the United States.
               </p>
             </div>
 
-            <Button className="mt-8 bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded">
-              Learn More
-            </Button>
+            <div className="mt-8 flex">
+              <Button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded">
+                Learn More
+              </Button>
+            </div>
           </div>
         </div>
       </div>
@@ -478,7 +508,7 @@ function VideoNewsSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">VIDEO</h2>
-            <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl w-full max-w-[750px] aspect-[385/340]">
               <iframe
                 src="https://www.youtube.com/embed/QS4WdFq2j3k"
                 title="Firefighter Challenge Championship Series"
@@ -499,7 +529,7 @@ function VideoNewsSection() {
                   key={item.id}
                   className="flex gap-4 items-start bg-gray-100 p-4 rounded-lg"
                 >
-                  <div className="flex-shrink-0 w-20 h-16 relative rounded overflow-hidden">
+                  <div className="flex-shrink-0 w-20 h-20 relative rounded overflow-hidden">
                     <Image
                       src={item.image || "/placeholder.svg"}
                       alt={item.title}
@@ -603,10 +633,6 @@ function ShopSection() {
               <div className="text-2xl font-bold text-red-600 mb-4">
                 {product.price}
               </div>
-
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded w-full sm:w-auto">
-                Add to Cart
-              </Button>
             </div>
           ))}
         </div>
@@ -639,10 +665,10 @@ export function NewsletterSection() {
             </p>
 
             <div className="flex space-x-4 justify-center">
-              <div className="w-10 h-10 rounded-4xl flex items-center justify-center bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors cursor-pointer">
+              <div className="w-10 h-10 rounded-2xl flex items-center justify-center bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors cursor-pointer">
                 <Facebook className="w-5 h-5 text-white" />
               </div>
-              <div className="w-10 h-10 rounded-4xl flex items-center justify-center bg-red-600 backdrop-blur-sm hover:bg-red-800 transition-colors cursor-pointer">
+              <div className="w-10 h-10 rounded-2xl flex items-center justify-center bg-red-600 backdrop-blur-sm hover:bg-red-800 transition-colors cursor-pointer">
                 <Youtube className="w-5 h-5 text-white" />
               </div>
               <div className="w-10 h-10 rounded-4xl flex items-center justify-center bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors cursor-pointer">
@@ -718,16 +744,16 @@ function SponsorsSection() {
           SPONSORS
         </h2>
 
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center items-center gap-16 md:gap-20 lg:gap-24">
+        <div className="w-full overflow-x-auto py-4">
+          <div className="flex justify-center items-center space-x-4 min-w-max px-4">
             {sponsors.map((sponsor, index) => (
-              <div key={index} className="flex items-center justify-center">
+              <div key={index} className="flex-shrink-0">
                 <Image
                   src={sponsor.logo || "/placeholder.svg"}
                   alt={sponsor.alt}
-                  width={400}
-                  height={400}
-                  className="max-h-40 w-auto object-contain hover:grayscale-0 transition-all duration-300"
+                  width={180}
+                  height={100}
+                  className="h-52 w-auto object-contain hover:grayscale-0 transition-all duration-300"
                 />
               </div>
             ))}

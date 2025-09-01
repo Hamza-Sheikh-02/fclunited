@@ -128,6 +128,17 @@
   font-style: normal;
 }
 
-.font-euclid-circular {
+.font-euclid-circular-medium {
   font-family: "Euclid Circular A Medium", serif;
+}
+
+@font-face {
+  font-family: "Euclid Circular A Regular";
+  src: url("/fonts/Euclid Circular A Regular.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-euclid-circular-regular {
+  font-family: "Euclid Circular A Regular", serif;
 }
