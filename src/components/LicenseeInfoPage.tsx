@@ -20,10 +20,10 @@ export default function LicenseeInfoPage() {
         <div className="bg-gray-100 py-16">
           <div className="container mx-auto max-w-7xl px-4">
             <div className="mb-8">
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">
+              <h3 className="text-2xl font-bold mb-4">
                 AUTHORIZED FCL LICENSEE PROGRAM
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="font-extralight text-gray-900 leading-relaxed">
                 The FCL is proud to grant licensing rights to certain
                 individuals or organizations to conduct FCL activities within
                 their jurisdiction.
@@ -39,28 +39,28 @@ export default function LicenseeInfoPage() {
                 <div className="relative">
                   <Image
                     src="/images/License Info/l.png"
-                    width={300}
-                    height={300}
+                    width={450}
+                    height={450}
                     alt="Licensee Badge"
                   />
                 </div>
               </div>
             </div>
 
-            <div className="text-gray-600 leading-relaxed">
+            <div className="font-extralight text-gray-900 leading-relaxed">
               <p>
                 If you are interested in becoming a licensee of a municipality,
-                state, region or country please email us at{" "}
-                <strong>XXXXXXXXXX</strong>. Your name will be added onto our
-                interested party list, and more information will be provided on
-                our league attorneys finalize our licensing program.
+                state, region or country please email us at XXXXXXXXXXX Your
+                name will be added onto our interested party list, and more
+                information will be provided as our league attorneys finalize
+                our licensing program.
               </p>
             </div>
           </div>
         </div>
       </section>
-
-      <NewsletterSection />``
+      <NewsletterSection />
+      ``
     </>
   );
 }

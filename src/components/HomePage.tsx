@@ -708,7 +708,7 @@ export function NewsletterSection() {
   );
 }
 
-function SponsorsSection() {
+export function SponsorsSection() {
   const sponsors = [
     {
       name: "WHP",
@@ -753,7 +753,7 @@ function SponsorsSection() {
                   alt={sponsor.alt}
                   width={180}
                   height={100}
-                  className="h-52 w-auto object-contain hover:grayscale-0 transition-all duration-300"
+                  className="h-44 w-auto object-contain hover:grayscale-0 transition-all duration-300"
                 />
               </div>
             ))}

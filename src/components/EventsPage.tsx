@@ -1,36 +1,7 @@
-import Image from "next/image";
 import { Button } from "./ui/button";
-import { NewsletterSection } from "./HomePage";
+import { NewsletterSection, SponsorsSection } from "./HomePage";
 
 export default function EventsPage() {
-  const sponsors = [
-    {
-      name: "WHP",
-      logo: "/images/Hero/sponsors-1.png",
-      alt: "WHP Logo",
-    },
-    {
-      name: "Snap-Tite",
-      logo: "/images/Hero/sponsors-2.png",
-      alt: "Snap-Tite Hoses Logo",
-    },
-    {
-      name: "SRB",
-      logo: "/images/Hero/sponsors-3.png",
-      alt: "SRB Logo",
-    },
-    {
-      name: "Activote",
-      logo: "/images/Hero/sponsors-4.png",
-      alt: "Activote Logo",
-    },
-    {
-      name: "Nasco Healthcare",
-      logo: "/images/Hero/sponsors-5.png",
-      alt: "Nasco Healthcare Logo",
-    },
-  ];
-
   return (
     <>
       <section className="w-full">
@@ -55,27 +26,10 @@ export default function EventsPage() {
             </p>
           </div>
         </div>
-        <div className="container mx-auto px-4 py-8 sm:py-12">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 md:gap-8 lg:gap-12 items-center justify-items-center">
-            {sponsors.map((sponsor, index) => (
-              <div
-                key={index}
-                className="flex items-center justify-center w-full"
-              >
-                <Image
-                  src={sponsor.logo || "/placeholder.svg"}
-                  alt={sponsor.alt}
-                  width={120}
-                  height={80}
-                  className="max-h-12 sm:max-h-16 md:max-h-20 lg:max-h-24 w-auto object-contain hover:grayscale-0 transition-all duration-300"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+        <SponsorsSection />
       </section>
 
-      <section className="w-full py-8 sm:py-12 md:py-16 bg-white">
+      <section className="w-full py-8 sm:py-12 md:py-16 bg-gray-100">
         <div className="container mx-auto max-w-7xl px-4">
           <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12">
             <span className="text-blue-600">CURRENT</span> SERIES & EVENTS
@@ -95,7 +49,7 @@ export default function EventsPage() {
                 <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">
                   THE ORIGINAL &quot;TOUGHEST TWO MINUTES IN SPORTS&quot;
                 </h3>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-4 sm:mb-6">
+                <p className="text-sm sm:text-base font-extralight font-euclid-circular-regular text-gray-600 leading-relaxed mb-4 sm:mb-6">
                   We created the Firefighter Challenge concept, formally known
                   as the Firefighter Combat Challenge, which began as a U.S.
                   research study on firefighter fitness and endurance in the
@@ -122,7 +76,7 @@ export default function EventsPage() {
                 <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">
                   HOMETOWN RIVALRY, UNFORGETTABLE FUN AT FCL
                 </h3>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-4 sm:mb-6">
+                <p className="text-sm sm:text-base font-extralight font-euclid-circular-regular text-gray-600 leading-relaxed mb-4 sm:mb-6">
                   The Hometown Edition is a scaled down version of the larger
                   Firefighter Challenge Championship Series (FCCS) offering a
                   one-day, single lane course event utilizing fire department
@@ -143,7 +97,7 @@ export default function EventsPage() {
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">
                   WHERE STRENGTH MEETS FIREFIGHTER DETERMINATION
                 </h3>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-4 sm:mb-6">
+                <p className="text-sm sm:text-base font-extralight font-euclid-circular-regular text-gray-600 leading-relaxed mb-4 sm:mb-6">
                   The Firefighter Workout Challenge offers various virtual
                   competitions year-round known as &apos;editions&apos;. Each
                   edition is developed by well-known fitness coaches, fitness
