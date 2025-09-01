@@ -7,16 +7,18 @@ export default function AboutPage() {
     <>
       <section className="w-full">
         <div
-          className="relative h-72 sm:h-80 md:h-96 lg:h-[28rem] xl:h-[32rem] w-full bg-cover bg-center flex items-center justify-center"
+          className="relative h-52 sm:h-80 md:h-96 lg:h-[500px] w-full bg-cover bg-center flex items-center justify-center"
           style={{
             backgroundImage: "url('/images/About/about.png')",
+            backgroundPosition: "center 40%",
+            backgroundSize: "cover",
           }}
         >
           <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6">
               ABOUT THE <span className="text-red-500">FCL</span>
             </h2>
-            <p className="text-white/95 text-sm sm:text-base md:text-lg lg:text-xl max-w-4xl mx-auto leading-relaxed">
+            <p className="text-white/95 text-sm sm:text-md md:text-md lg:text-md max-w-4xl mx-auto font-light font-euclid-circular-regular leading-relaxed">
               The Firefighter Challenge League (FCL) is the official global
               sanctioning body for its fire- themed challenge-based events. We
               are an international organization dedicated to developing,
@@ -87,15 +89,20 @@ function MissionVisionSection() {
 
             <div className="order-1 lg:order-2 space-y-4 sm:space-y-6">
               <div className="flex items-center gap-3 sm:gap-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <div className="w-5 h-5 sm:w-6 sm:h-6 border-2 border-white rounded-full"></div>
+                <div>
+                  <Image
+                    src="/images/About/target.png"
+                    width={50}
+                    height={50}
+                    alt="Target Logo"
+                  />
                 </div>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
                   OUR <span className="text-red-500">MISSION</span>
                 </h2>
               </div>
 
-              <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
+              <p className="text-gray-600 text-base sm:text-lg font-light font-euclid-circular-regular leading-relaxed">
                 We have a three-part nonprofit mission of highlighting the
                 strength and readiness of the fire service, encouraging interest
                 in firefighting careers, and offering engaging methods to help
@@ -113,20 +120,21 @@ function MissionVisionSection() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
             <div className="space-y-4 sm:space-y-6">
               <div className="flex items-center gap-3 sm:gap-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <div className="w-5 h-5 sm:w-6 sm:h-6 border-2 border-white rounded-full"></div>
-                </div>
+                <Image
+                  src="/images/About/eye.png"
+                  width={50}
+                  height={50}
+                  alt="Vision Logo"
+                />
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
                   OUR <span className="text-blue-500">VISION</span>
                 </h2>
               </div>
-
-              <p className="text-gray-600 text-base sm:text-lg leading-relaxed font-semibold">
+              <p className="text-gray-600 text-sm sm:text-base font-light font-euclid-circular-regular leading-relaxed">
                 Through sport we UNITE, CHALLENGE, INSPIRE, INNOVATE, AND
                 ACHIEVE our nonprofit Mission.
-              </p>
-
-              <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                <br />
+                <br />
                 Our competition series is open to all firefighters regardless of
                 where they are on their fitness journey, offering a variety of
                 sporting events for as a sport for junior, explorer, cadet,
@@ -161,21 +169,21 @@ function MissionVisionSection() {
 function RedBlueSections() {
   return (
     <section className="w-full py-12 sm:py-16 lg:py-20">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-6 sm:gap-8 font-euclid-circular lg:grid-cols-2">
-          <div
-            className="flex min-h-[350px] sm:min-h-[400px] lg:min-h-[450px] flex-col justify-center rounded-xl sm:rounded-2xl lg:rounded-3xl p-6 sm:p-8 lg:p-12 text-white"
-            style={{
-              backgroundImage: "url('/images/About/img-1.png')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }}
-          >
-            <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight mb-4 sm:mb-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 font-euclid-circular">
+        <div
+          className="flex min-h-[350px] sm:min-h-[400px] lg:min-h-[450px] flex-col justify-center rounded-r-3xl p-6 sm:p-8 lg:p-12 text-white"
+          style={{
+            backgroundImage: "url('/images/About/img-1.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <div className="max-w-md ml-auto">
+            <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold leading-tight mb-4 sm:mb-6">
               THE TOUGHEST TWO MINUTES IN SPORTS BEGAN HERE
             </h2>
-            <p className="text-sm sm:text-base lg:text-lg leading-relaxed opacity-95 mb-6 sm:mb-8">
+            <p className="text-sm sm:text-base lg:text-lg leading-relaxed opacity-95 mb-6 sm:mb-8 font-light font-euclid-circular-regular">
               Proud of the toughest two minutes in sports? That&apos;s all! The
               Firefighter Challenge Championship Series is our signature sport,
               and we are proud to be the original founding body and creator of
@@ -185,25 +193,27 @@ function RedBlueSections() {
             </p>
             <Button
               variant="outline"
-              className="w-fit border-white bg-transparent px-4 sm:px-6 py-2 text-sm sm:text-base text-white hover:bg-white hover:text-red-600"
+              className="w-fit px-4 sm:px-6 py-2 rounded-md text-sm sm:text-base bg-white text-red-500 hover:bg-gray-100 hover:text-red-700"
             >
               Learn More
             </Button>
           </div>
+        </div>
 
-          <div
-            className="flex min-h-[350px] sm:min-h-[400px] lg:min-h-[450px] flex-col justify-center rounded-xl sm:rounded-2xl lg:rounded-3xl p-6 sm:p-8 lg:p-12 text-white"
-            style={{
-              backgroundImage: "url('/images/About/img-2.png')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }}
-          >
-            <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight mb-4 sm:mb-6">
+        <div
+          className="flex min-h-[350px] sm:min-h-[400px] lg:min-h-[450px] flex-col justify-center rounded-l-3xl p-6 sm:p-8 lg:p-12 text-white"
+          style={{
+            backgroundImage: "url('/images/About/img-2.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <div className="max-w-md">
+            <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold leading-tight mb-4 sm:mb-6">
               WE ARE THE OFFICIAL INTERNATIONAL GOVERNING BODY
             </h2>
-            <p className="text-sm sm:text-base lg:text-lg leading-relaxed opacity-95 mb-6 sm:mb-8">
+            <p className="text-sm sm:text-base lg:text-lg leading-relaxed opacity-95 mb-6 sm:mb-8 font-light font-euclid-circular-regular">
               Commissioners for the FCL establish the rules, regulations and
               play enforced by our legally granted licensees around the world.
               We ensure our licensees deliver consistent experiences for our
@@ -213,7 +223,7 @@ function RedBlueSections() {
             </p>
             <Button
               variant="outline"
-              className="w-fit border-white bg-transparent px-4 sm:px-6 py-2 text-sm sm:text-base text-white hover:bg-white hover:text-blue-600"
+              className="w-fit px-4 sm:px-6 py-2 rounded-md text-sm sm:text-base bg-white text-blue-500 hover:bg-gray-100 hover:text-blue-700"
             >
               Learn More
             </Button>
