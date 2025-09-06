@@ -52,26 +52,41 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-4 mt-6 pt-6 border-t border-gray-100 text-xs text-gray-500">
-          <Link href="#" className="hover:text-gray-700">
-            Privacy Policy
-          </Link>
-          <span className="text-gray-300">|</span>
-          <Link href="#" className="hover:text-gray-700">
-            FCL Privacy
-          </Link>
-          <span className="text-gray-300">|</span>
-          <Link href="#" className="hover:text-gray-700">
-            EU/UK Privacy
-          </Link>
-          <span className="text-gray-300">|</span>
-          <Link href="#" className="hover:text-gray-700">
-            Terms of Service
-          </Link>
-          <span className="text-gray-300">|</span>
-          <Link href="#" className="hover:text-gray-700">
-            Cookie Settings
-          </Link>
+        <div className="flex flex-col md:flex-row items-center justify-between mt-6 pt-6 border-t border-gray-100 text-xs text-gray-500">
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link href="#" className="hover:text-gray-700">
+              Privacy Policy
+            </Link>
+            <span className="text-gray-300">|</span>
+            <Link href="#" className="hover:text-gray-700">
+              FCL Privacy
+            </Link>
+            <span className="text-gray-300">|</span>
+            <Link href="#" className="hover:text-gray-700">
+              EU/UK Privacy
+            </Link>
+            <span className="text-gray-300">|</span>
+            <Link href="#" className="hover:text-gray-700">
+              Terms of Service
+            </Link>
+            <span className="text-gray-300">|</span>
+            <Link href="#" className="hover:text-gray-700">
+              Cookie Settings
+            </Link>
+          </div>
+          
+          <p className="mb-4 mr-4 md:mb-0">
+            Website Designed by{" "}
+            <strong className="font-medium text-gray-700">
+              <Link
+                href={"https://imagin8creations.com/"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                IMAGIN8 CREATIONS
+              </Link>
+            </strong>
+          </p>
         </div>
       </div>
     </footer>
