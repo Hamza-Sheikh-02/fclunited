@@ -1,16 +1,19 @@
 import React from "react";
+import Image from "next/image";
 import { Button } from "./ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
-import Image from "next/image";
+import { Card } from "@/components/ui/card";
 import {
   Facebook,
   Youtube,
   Instagram,
   ChevronLeft,
   ChevronRight,
+  CalendarDays,
+  CircleArrowRight,
 } from "lucide-react";
+
 type CardData = {
   id: number;
   title: string;
@@ -122,14 +125,7 @@ export default function HomePage() {
       <AboutSection />
       <FeatureSection />
       <VideoNewsSection />
-      <div className="flex w-full items-center justify-center">
-        <Image
-          src="/images/Hero/download.png"
-          width={1920}
-          height={720}
-          alt="last"
-        />
-      </div>
+      <DownloadFCL />
       <ShopSection />
       <NewsletterSection />
       <SponsorsSection />
@@ -141,35 +137,39 @@ function Caard({ card, index }: { card: CardData; index: number }) {
   const stagger = index % 2 === 0 ? "mt-0" : "mt-4";
 
   return (
-    <Card
-      className={`${stagger} h-[460px] sm:h-80 md:h-[460px] rounded-2xl overflow-hidden shadow-lg bg-center relative bg-cover`}
+    <section
+      className={`${stagger} w-full max-w-sm rounded-2xl h-[460px] sm:h-80 md:h-[460px] overflow-hidden relative shadow-lg`}
       style={{
         backgroundImage: `url(${card.imageLink})`,
         backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
         backgroundPosition: "center center",
+        backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/20" />
-      <CardContent className="relative z-10 h-full p-4 flex flex-col justify-between bg-transparent">
-        <div>
-          <h3 className="text-white text-xl sm:text-2xl md:text-2xl font-extrabold leading-tight uppercase">
+      <div className="absolute inset-0 bg-black/20 z-0" />
+
+      <div className="relative z-10 h-full p-4 sm:p-6 flex flex-col justify-between">
+        <div className="space-y-1">
+          <h3 className="text-white text-sm sm:text-base md:text-lg font-bold uppercase tracking-tight">
             {card.title}
           </h3>
-          <h3 className="text-white text-2xl sm:text-3xl md:text-3xl font-extrabold leading-tight uppercase">
+
+          <h2 className="text-white text-xl sm:text-2xl md:text-3xl font-extrabold uppercase leading-tight">
             {card.titleClass}
-          </h3>
-          <p className="text-white/90 text-xs sm:text-sm mt-2 max-w-[260px] font-light font-euclid-circular-regular">
+          </h2>
+
+          <p className="text-white/90 text-xs sm:text-sm mt-2 max-w-[260px] font-light">
             {card.subtitle}
           </p>
         </div>
-        <div className="w-full">
-          <Button className="w-full rounded-full py-2.5 text-xs font-semibold bg-red-600 hover:bg-red-700 text-white shadow-md">
+
+        <div className="flex-shrink-0">
+          <button className="rounded-full py-2.5 px-5 text-xs sm:text-sm font-semibold bg-gradient-to-b from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white shadow-md ring-1 ring-red-900/8">
             {card.buttonText}
-          </Button>
+          </button>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </section>
   );
 }
 
@@ -376,40 +376,40 @@ function AboutSection() {
   );
 }
 
-const featuredPosts = [
-  {
-    id: 1,
-    date: "Nov 18, 2025",
-    name: "Quinlan Roe",
-    department: "Mesquite Fire Department",
-    image: "/images/Hero/f-1.png",
-  },
-  {
-    id: 2,
-    date: "Nov 18, 2025",
-    name: "Taylor Ward",
-    department: "Murray City UT Fire Department",
-    image: "/images/Hero/f-2.png",
-  },
-  {
-    id: 3,
-    date: "Nov 18, 2025",
-    name: "Jared Johnson",
-    department: "Austin TX Fire Department",
-    image: "/images/Hero/f-3.png",
-  },
-  {
-    id: 4,
-    date: "Nov 18, 2025",
-    name: "Christina Hubacek",
-    department: "Irving TX Fire Department",
-    image: "/images/Hero/f-4.png",
-  },
-];
-
 function FeatureSection() {
+  const featuredPosts = [
+    {
+      id: 1,
+      date: "Nov 18, 2025",
+      name: "Quinlan Roe",
+      department: "Mesquite Fire Department",
+      image: "/images/Hero/f-1.png",
+    },
+    {
+      id: 2,
+      date: "Nov 18, 2025",
+      name: "Taylor Ward",
+      department: "Murray City UT Fire Department",
+      image: "/images/Hero/f-2.png",
+    },
+    {
+      id: 3,
+      date: "Nov 18, 2025",
+      name: "Jared Johnson",
+      department: "Austin TX Fire Department",
+      image: "/images/Hero/f-3.png",
+    },
+    {
+      id: 4,
+      date: "Nov 18, 2025",
+      name: "Christina Hubacek",
+      department: "Irving TX Fire Department",
+      image: "/images/Hero/f-4.png",
+    },
+  ];
+
   return (
-    <section className="py-8 sm:py-12 md:py-16 font-euclid-circular bg-white">
+    <section className="py-8 sm:py-12 md:py-16 font-euclid-circular bg-gray-100">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-8 gap-4">
           <div className="w-full sm:w-auto">
@@ -430,80 +430,84 @@ function FeatureSection() {
           FEATURED
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredPosts.map((post) => (
-            <Card
-              key={post.id}
-              className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
-            >
-              <div className="relative w-full aspect-[4/3] overflow-hidden">
-                <Image
-                  src={post.image || "/placeholder.svg"}
-                  alt={`${post.name} - ${post.department}`}
-                  fill
-                  className="object-cover grayscale hover:grayscale-0 transition-all duration-300"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                />
-              </div>
-              <CardContent className="p-4">
-                <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
-                  <svg
-                    className="w-4 h-4"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                      clipRule="evenodd"
+        <section className="py-8 sm:py-12 lg:py-16 px-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {featuredPosts.map((post) => (
+                <article
+                  key={post.id}
+                  className="w-full flex flex-col items-start text-left rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-xl transition-shadow duration-200"
+                >
+                  <div className="relative w-full aspect-[4/3] overflow-hidden rounded-t-2xl">
+                    <Image
+                      src={post.image}
+                      alt={`${post.name} - ${post.department}`}
+                      fill
+                      className="object-cover grayscale hover:grayscale-0 transition-all duration-300 will-change-transform hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      priority={false}
                     />
-                  </svg>
-                  {post.date}
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1 line-clamp-2">
-                  {post.name}
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                  {post.department}
-                </p>
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm w-full">
-                  Read More
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                  </div>
+
+                  <div className="w-full px-4 sm:px-6 pt-3 pb-4 rounded-b-2xl flex flex-col">
+                    <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
+                      <CalendarDays className="w-4 h-4" />
+                      <time dateTime={post.date}>{post.date}</time>
+                    </div>
+
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1 text-left line-clamp-2">
+                      {post.name}
+                    </h3>
+
+                    <p className="text-gray-600 text-sm mb-3 text-left line-clamp-2">
+                      {post.department}
+                    </p>
+
+                    <div className="mt-auto mb-4 w-full">
+                      <button
+                        className="w-full md:w-auto bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-200 text-white px-5 py-2 rounded-md text-sm inline-block transition-colors"
+                        aria-label={`Read more about ${post.name}`}
+                      >
+                        Read More
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
       </div>
     </section>
   );
 }
 
-const newsItems = [
-  {
-    id: 1,
-    title: "FCL Expands Globally with New Regional Leagues",
-    image: "/images/Hero/news-1.png",
-  },
-  {
-    id: 2,
-    title: "FCL Nationals Set for October in Dallas, TX",
-    image: "/images/Hero/news-2.png",
-  },
-  {
-    id: 3,
-    title: "New Event Format: The Iron Hose Gauntlet is Here",
-    image: "/images/Hero/news-3.png",
-  },
-  {
-    id: 4,
-    title: "FCL Expands Globally with New Regional Leagues",
-    image: "/images/Hero/news-4.png",
-  },
-];
-
 function VideoNewsSection() {
+  const newsItems = [
+    {
+      id: 1,
+      title: "FCL Expands Globally with New Regional Leagues",
+      image: "/images/Hero/news-1.png",
+    },
+    {
+      id: 2,
+      title: "FCL Nationals Set for October in Dallas, TX",
+      image: "/images/Hero/news-2.png",
+    },
+    {
+      id: 3,
+      title: "New Event Format: The Iron Hose Gauntlet is Here",
+      image: "/images/Hero/news-3.png",
+    },
+    {
+      id: 4,
+      title: "FCL Expands Globally with New Regional Leagues",
+      image: "/images/Hero/news-4.png",
+    },
+  ];
+
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-gray-100">
       <div className="font-euclid-circular container mx-auto px-4 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div>
@@ -527,7 +531,7 @@ function VideoNewsSection() {
               {newsItems.map((item) => (
                 <div
                   key={item.id}
-                  className="flex gap-4 items-start bg-gray-100 p-4 rounded-lg"
+                  className="flex gap-4 items-start bg-white p-4 rounded-lg"
                 >
                   <div className="flex-shrink-0 w-20 h-20 relative rounded overflow-hidden">
                     <Image
@@ -541,8 +545,8 @@ function VideoNewsSection() {
                     <h3 className="text-lg font-bold text-gray-900 mb-2 leading-tight">
                       {item.title}
                     </h3>
-                    <button className="text-red-600 text-sm font-semibold hover:text-red-700 transition-colors">
-                      Read More →
+                    <button className="inline-flex items-center gap-2 whitespace-nowrap text-red-600 text-sm font-semibold hover:text-red-700 transition-colors">
+                      Read More <CircleArrowRight className="w-4 h-4" />
                     </button>
                   </div>
                 </div>
@@ -552,6 +556,19 @@ function VideoNewsSection() {
         </div>
       </div>
     </section>
+  );
+}
+
+function DownloadFCL() {
+  return (
+    <div className="bg-gray-100">
+      <Image
+        src={"/images/Hero/download.png"}
+        alt="Download FCL"
+        width="1920"
+        height="1080"
+      />
+    </div>
   );
 }
 
@@ -596,7 +613,7 @@ function ShopSection() {
   ];
 
   return (
-    <section className="font-euclid-circular py-8 sm:py-12 lg:py-16 px-4 bg-white">
+    <section className="font-euclid-circular bg-gray-200 py-8 sm:py-12 lg:py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black">
@@ -604,36 +621,43 @@ function ShopSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {products.map((product) => (
-            <div
+            <article
               key={product.id}
-              className="flex flex-col items-center text-center"
+              className="w-full flex flex-col items-center text-center rounded-2xl overflow-hidden bg-white shadow-sm"
+              aria-labelledby={`product-${product.id}-title`}
             >
-              <div className="w-full bg-gray-100 rounded-lg p-4 sm:p-6 flex items-center justify-center">
-                <div className="relative w-full max-w-[220px] h-40 sm:h-48">
+              <div className="w-full rounded-t-2xl overflow-hidden relative">
+                <div className="relative w-full h-44 sm:h-52 lg:h-60">
                   <Image
-                    src={product.image || "/placeholder.svg"}
-                    alt={product.title}
+                    src={product.image}
+                    alt={product.category}
                     fill
-                    className="object-contain"
-                    sizes="(max-width: 640px) 60vw, (max-width: 1024px) 40vw, 220px"
+                    className="object-cover object-center block"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    priority={false}
                   />
                 </div>
               </div>
 
-              <h3 className="text-sm sm:text-base font-bold text-black mt-4 mb-2 uppercase">
-                {product.category}
-              </h3>
+              <div className="w-full px-4 sm:px-6 pt-3 pb-3 rounded-b-2xl flex flex-col">
+                <h3
+                  id={`product-${product.id}-title`}
+                  className="text-sm sm:text-base font-bold text-black mt-0.5 mb-1 uppercase"
+                >
+                  {product.category}
+                </h3>
 
-              <p className="text-gray-600 text-sm mb-4 px-2">
-                {product.description}
-              </p>
+                <p className="text-gray-600 text-sm mb-2 px-1 sm:px-2 line-clamp-2">
+                  {product.description}
+                </p>
 
-              <div className="text-2xl font-bold text-red-600 mb-4">
-                {product.price}
+                <div className="text-2xl sm:text-3xl font-bold text-red-600 mb-0">
+                  {product.price}
+                </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
@@ -749,19 +773,42 @@ export function SponsorsSection() {
           SPONSORS
         </h2>
 
-        <div className="w-full overflow-x-auto py-4">
-          <div className="flex justify-center items-center space-x-4 min-w-max px-4">
-            {sponsors.map((sponsor, index) => (
-              <div key={index} className="flex-shrink-0">
-                <Image
-                  src={sponsor.logo || "/placeholder.svg"}
-                  alt={sponsor.alt}
-                  width={180}
-                  height={100}
-                  className="h-44 w-auto object-contain hover:grayscale-0 transition-all duration-300"
-                />
+        <div className="w-full py-4">
+          <div className="block md:hidden">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 px-2">
+              {sponsors.map((sponsor, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-center p-2 bg-white rounded"
+                >
+                  <Image
+                    src={sponsor.logo || "/placeholder.svg"}
+                    alt={sponsor.alt || "sponsor logo"}
+                    width={220}
+                    height={120}
+                    className="max-h-24 w-auto object-contain filter transition-all duration-300"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="hidden md:block">
+            <div className="w-full overflow-x-auto py-4">
+              <div className="flex justify-center items-center space-x-4 min-w-max px-4">
+                {sponsors.map((sponsor, index) => (
+                  <div key={index} className="flex-shrink-0">
+                    <Image
+                      src={sponsor.logo || "/placeholder.svg"}
+                      alt={sponsor.alt || "sponsor logo"}
+                      width={180}
+                      height={100}
+                      className="h-44 w-auto object-contain transition-all duration-300"
+                    />
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>
