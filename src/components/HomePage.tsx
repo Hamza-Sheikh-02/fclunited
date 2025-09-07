@@ -735,6 +735,11 @@ export function SponsorsSection() {
       logo: "/images/Hero/sponsors-5.png",
       alt: "Nasco Healthcare Logo",
     },
+    {
+      name: "Imagin8 Creations",
+      logo: "/images/Hero/sponsors-6.png",
+      alt: "Imagin8 Creations Logo",
+    },
   ];
 
   return (
