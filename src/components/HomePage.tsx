@@ -561,14 +561,14 @@ function VideoNewsSection() {
 
 function DownloadFCL() {
   return (
-    <div className="bg-gray-100">
+    <section className="bg-gray-100 flex items-center justify-center">
       <Image
         src={"/images/Hero/download.png"}
         alt="Download FCL"
         width="1920"
         height="1080"
       />
-    </div>
+    </section>
   );
 }
 
