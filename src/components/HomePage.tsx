@@ -141,14 +141,14 @@ function Caard({ card, index }: { card: CardData; index: number }) {
       className={`${stagger} w-full max-w-sm rounded-2xl h-[460px] sm:h-80 md:h-[460px] overflow-hidden relative shadow-lg`}
       style={{
         backgroundImage: `url(${card.imageLink})`,
-        backgroundSize: "cover",
+        backgroundSize: "120% 120%",
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="absolute inset-0 bg-black/20 z-0" />
+      <div className="absolute inset-0 bg-black/30 z-0" />
 
-      <div className="relative z-10 h-full p-4 sm:p-6 flex flex-col justify-between">
+      <div className="absolute inset-0 flex flex-col justify-between p-4 z-10">
         <div className="space-y-1">
           <h3 className="text-white text-sm sm:text-base md:text-lg font-bold uppercase tracking-tight">
             {card.title}
@@ -163,10 +163,10 @@ function Caard({ card, index }: { card: CardData; index: number }) {
           </p>
         </div>
 
-        <div className="flex-shrink-0">
-          <button className="rounded-full py-2.5 px-5 text-xs sm:text-sm font-semibold bg-gradient-to-b from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white shadow-md ring-1 ring-red-900/8">
+        <div className="flex justify-center items-center mb-4">
+          <Button className="w-full rounded-full py-2.5 text-sm font-semibold bg-red-600 hover:bg-red-700 text-white shadow-md">
             {card.buttonText}
-          </button>
+          </Button>
         </div>
       </div>
     </section>
